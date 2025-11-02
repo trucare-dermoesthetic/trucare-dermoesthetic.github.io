@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TruCare - Centro Dermoestético</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;1,400&family=Libre+Baskerville:ital,wght@0,400;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;1,400&family=Libre+Baskerville:ital,wght@0,400;1,400&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             /* Colores Corporativos Principales - Manual TruCare */
@@ -33,36 +36,28 @@
             line-height: 1.6;
         }
 
-        h1, h2, h3 {
+        h1,
+        h2,
+        h3 {
             font-family: 'Libre Baskerville', serif;
             font-weight: 400;
             line-height: 1.2;
         }
 
         .hero {
-            background: linear-gradient(135deg, var(--skin-light) 0%, var(--lilac-light) 100%);
+            background-image: url("images/body-top.jpeg");
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
             padding: 120px 20px 80px;
             text-align: center;
         }
 
         .logo {
-            font-family: 'Cormorant', serif;
-            font-size: 3.5rem;
-            color: var(--skin-dark);
-            margin-bottom: 20px;
-            font-weight: 400;
-            letter-spacing: 0.02em;
-        }
-
-        .logo .tru {
-            font-family: 'Libre Baskerville', serif;
-            font-style: italic;
-        }
-
-        .logo .care {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 300;
-            font-style: normal;
+            width: 100%;
+            height: auto;
+            max-width: 1000px;
+            object-fit: contain;
         }
 
         .tagline {
@@ -118,7 +113,7 @@
             background-color: var(--skin-light);
             padding: 40px 30px;
             border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .service-category h3 {
@@ -175,7 +170,7 @@
             border-radius: 10px;
             padding: 20px;
             text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
         .gallery-placeholder {
@@ -209,7 +204,7 @@
             background-color: var(--white);
             padding: 40px 30px;
             border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
         }
 
         .offer-card h3 {
@@ -250,7 +245,7 @@
             background-color: var(--white);
             padding: 40px;
             border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .form-group {
@@ -380,10 +375,11 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Hero Section -->
     <section class="hero">
-        <h1 class="logo"><span class="tru">Tru</span><span class="care">Care</span></h1>
+        <img class="logo" src="images/trucare_RGB_neonyellow.png" alt="logo">
         <p class="tagline">Healthy skin, happy life</p>
         <a href="#contacto" class="cta-btn">Reserva tu Consulta Gratuita</a>
     </section>
@@ -442,8 +438,12 @@
         <div class="container">
             <h2 class="section-title">Sobre Mí</h2>
             <div class="about-content">
-                <p>Soy enfermera dermoestética especializada en tratamientos avanzados para el cuidado de la piel, el cuerpo y el cabello. En TruCare, mi objetivo es ayudarte a sentirte bien con tu piel a través de tratamientos personalizados y de alta calidad.</p>
-                <p style="margin-top: 20px;">Con una formación continua en las últimas técnicas de dermoestética, ofrezco un servicio profesional y cercano, adaptado a las necesidades únicas de cada persona. Tu bienestar y confianza son mi prioridad.</p>
+                <p>Soy enfermera dermoestética especializada en tratamientos avanzados para el cuidado de la piel, el
+                    cuerpo y el cabello. En TruCare, mi objetivo es ayudarte a sentirte bien con tu piel a través de
+                    tratamientos personalizados y de alta calidad.</p>
+                <p style="margin-top: 20px;">Con una formación continua en las últimas técnicas de dermoestética,
+                    ofrezco un servicio profesional y cercano, adaptado a las necesidades únicas de cada persona. Tu
+                    bienestar y confianza son mi prioridad.</p>
             </div>
         </div>
     </section>
@@ -540,7 +540,7 @@
                         <strong>Email:</strong>
                         <p>info@trucare.com</p>
                     </div>
-                    
+
                     <div class="map-placeholder">
                         Mapa de ubicación
                     </div>
@@ -581,20 +581,21 @@
         });
 
         // Form submission handler
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             const nombre = document.getElementById('nombre').value;
             const email = document.getElementById('email').value;
             const telefono = document.getElementById('telefono').value;
             const mensaje = document.getElementById('mensaje').value;
-            
+
             // Here you would normally send the data to a server
             alert(`¡Gracias ${nombre}! Hemos recibido tu mensaje y te contactaremos pronto.`);
-            
+
             // Reset form
             this.reset();
         });
     </script>
 </body>
+
 </html>
