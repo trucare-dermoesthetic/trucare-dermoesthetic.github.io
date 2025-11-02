@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TruCare - Centro Dermoestético</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;1,400&family=Libre+Baskerville:ital,wght@0,400;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Colores Corporativos Principales - Manual TruCare */
+            --neon-yellow: #fffc79;
+            --skin-light: #fbdec3;
+            --skin-medium: #835536;
+            --skin-dark: #442e26;
+            /* Colores Corporativos Secundarios */
+            --skin-alt: #c5a285;
+            --lilac-light: #d5c5e3;
+            --lilac: #8673c3;
+            --white: #ffffff;
+            --black: #000000;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--skin-dark);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--skin-light) 0%, var(--lilac-light) 100%);
+            padding: 120px 20px 80px;
+            text-align: center;
+        }
+
+        .logo {
+            font-family: 'Cormorant', serif;
+            font-size: 3.5rem;
+            color: var(--skin-dark);
+            margin-bottom: 20px;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+        }
+
+        .logo .tru {
+            font-family: 'Cormorant', serif;
+            font-style: italic;
+        }
+
+        .logo .care {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            color: var(--skin-medium);
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .cta-btn {
+            background-color: var(--neon-yellow);
+            color: var(--skin-dark);
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--skin-dark);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .service-category {
+            background-color: var(--skin-light);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .service-category h3 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: var(--skin-dark);
+            border-bottom: 3px solid var(--neon-yellow);
+            padding-bottom: 10px;
+        }
+
+        .service-category ul {
+            list-style: none;
+        }
+
+        .service-category li {
+            padding: 8px 0;
+            font-size: 0.95rem;
+            color: var(--skin-medium);
+            font-weight: 300;
+        }
+
+        .service-category li::before {
+            content: "✓ ";
+            color: var(--neon-yellow);
+            font-weight: 600;
+            margin-right: 8px;
+        }
+
+        .about {
+            background-color: var(--lilac-light);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--skin-dark);
+        }
+
+        .gallery {
+            background-color: var(--white);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            background-color: var(--skin-light);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .gallery-placeholder {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--skin-alt) 0%, var(--skin-medium) 100%);
+            border-radius: 8px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+
+        .offers {
+            background-color: var(--neon-yellow);
+            text-align: center;
+        }
+
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .offer-card {
+            background-color: var(--white);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .offer-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--skin-dark);
+        }
+
+        .offer-card p {
+            font-size: 1rem;
+            color: var(--skin-medium);
+            margin-bottom: 20px;
+        }
+
+        .offer-price {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--neon-yellow);
+            background-color: var(--skin-dark);
+            padding: 10px 20px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        .contact {
+            background-color: var(--skin-light);
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .contact-form {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--skin-dark);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--skin-alt);
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background-color: var(--skin-dark);
+            color: var(--neon-yellow);
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--skin-medium);
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            color: var(--skin-dark);
+        }
+
+        .info-item {
+            margin-bottom: 20px;
+        }
+
+        .info-item strong {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--skin-dark);
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, var(--skin-medium) 0%, var(--skin-dark) 100%);
+            border-radius: 10px;
+            margin: 25px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-style: italic;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 45px;
+            height: 45px;
+            background-color: var(--skin-dark);
+            color: var(--neon-yellow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.1);
+        }
+
+        footer {
+            background-color: var(--skin-dark);
+            color: var(--skin-light);
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 class="logo"><span class="tru">Tru</span><span class="care">Care</span></h1>
+        <p class="tagline">Healthy skin, happy life</p>
+        <a href="#contacto" class="cta-btn">Reserva tu Consulta Gratuita</a>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios">
+        <div class="container">
+            <h2 class="section-title">Nuestros Tratamientos</h2>
+            <div class="services-grid">
+                <!-- Tratamientos Faciales -->
+                <div class="service-category">
+                    <h3>Tratamientos Faciales</h3>
+                    <ul>
+                        <li>Valoración Gratuita</li>
+                        <li>Dermoconsulta + Rutina Facial</li>
+                        <li>Peeling Químico</li>
+                        <li>Microneedling</li>
+                        <li>Rellenos Faciales con Ácido Hialurónico</li>
+                        <li>Mesoterapia Facial / Periocular</li>
+                        <li>Skinbooster</li>
+                        <li>Inductores de Colágeno</li>
+                        <li>Hidroxiapatita Cálcica</li>
+                        <li>Exosomas Faciales</li>
+                        <li>Hilos Tensores</li>
+                        <li>PlasmaPen</li>
+                    </ul>
+                </div>
+
+                <!-- Tratamientos Corporales -->
+                <div class="service-category">
+                    <h3>Tratamientos Corporales</h3>
+                    <ul>
+                        <li>Mesoterapia Corporal</li>
+                        <li>Intralipoterapia</li>
+                        <li>Presoterapia</li>
+                        <li>Indiba</li>
+                    </ul>
+                </div>
+
+                <!-- Tratamientos Capilares -->
+                <div class="service-category">
+                    <h3>Tratamientos Capilares</h3>
+                    <ul>
+                        <li>Diagnóstico Capilar Gratuito</li>
+                        <li>Abordaje Integral para Diferentes Tipos de Alopecias</li>
+                        <li>Tratamientos con Mesoterapia, Vitaminas y Técnicas Regenerativas</li>
+                        <li>Exosomas Capilares</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre-mi" class="about">
+        <div class="container">
+            <h2 class="section-title">Sobre Mí</h2>
+            <div class="about-content">
+                <p>Soy enfermera dermoestética especializada en tratamientos avanzados para el cuidado de la piel, el cuerpo y el cabello. En TruCare, mi objetivo es ayudarte a sentirte bien con tu piel a través de tratamientos personalizados y de alta calidad.</p>
+                <p style="margin-top: 20px;">Con una formación continua en las últimas técnicas de dermoestética, ofrezco un servicio profesional y cercano, adaptado a las necesidades únicas de cada persona. Tu bienestar y confianza son mi prioridad.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galeria" class="gallery">
+        <div class="container">
+            <h2 class="section-title">Resultados Antes/Después</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">Tratamiento Facial</div>
+                    <p>Resultados visibles con nuestros tratamientos personalizados</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">Rellenos Faciales</div>
+                    <p>Recupera la juventud y luminosidad de tu piel</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">Tratamiento Capilar</div>
+                    <p>Soluciones efectivas para la salud capilar</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">Mesoterapia</div>
+                    <p>Técnicas avanzadas para tu bienestar</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offers Section -->
+    <section id="ofertas" class="offers">
+        <div class="container">
+            <h2 class="section-title">Ofertas Especiales</h2>
+            <div class="offers-grid">
+                <div class="offer-card">
+                    <h3>Primera Consulta</h3>
+                    <p>Valoración completa y diagnóstico personalizado</p>
+                    <span class="offer-price">GRATIS</span>
+                </div>
+                <div class="offer-card">
+                    <h3>Pack Facial Completo</h3>
+                    <p>3 sesiones de tratamiento facial personalizado</p>
+                    <span class="offer-price">Consultar</span>
+                </div>
+                <div class="offer-card">
+                    <h3>Diagnóstico Capilar</h3>
+                    <p>Análisis completo sin compromiso</p>
+                    <span class="offer-price">GRATIS</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contacto</h2>
+            <div class="contact-wrapper">
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono">
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Enviar Mensaje</button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <h3>Información de Contacto</h3>
+                    <div class="info-item">
+                        <strong>Dirección:</strong>
+                        <p>Tu dirección aquí<br>Ciudad, Código Postal</p>
+                    </div>
+                    <div class="info-item">
+                        <strong>Teléfono:</strong>
+                        <p>+34 XXX XXX XXX</p>
+                    </div>
+                    <div class="info-item">
+                        <strong>Email:</strong>
+                        <p>info@trucare.com</p>
+                    </div>
+                    
+                    <div class="map-placeholder">
+                        Mapa de ubicación
+                    </div>
+
+                    <div class="info-item">
+                        <strong>Síguenos en Redes Sociales:</strong>
+                        <div class="social-links">
+                            <a href="#" title="Instagram">IG</a>
+                            <a href="#" title="Facebook">FB</a>
+                            <a href="#" title="WhatsApp">WA</a>
+                            <a href="#" title="TikTok">TT</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 TruCare - Centro Dermoestético. Todos los derechos reservados.</p>
+        <p>Enfermera Dermoestética Profesional</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nombre = document.getElementById('nombre').value;
+            const email = document.getElementById('email').value;
+            const telefono = document.getElementById('telefono').value;
+            const mensaje = document.getElementById('mensaje').value;
+            
+            // Here you would normally send the data to a server
+            alert(`¡Gracias ${nombre}! Hemos recibido tu mensaje y te contactaremos pronto.`);
+            
+            // Reset form
+            this.reset();
+        });
+    </script>
+</body>
+</html>
