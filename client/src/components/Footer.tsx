@@ -1,4 +1,4 @@
-import { Instagram, Mail, MapPin, Phone } from "lucide-react";
+import { Instagram, Mail, MapPin, Phone, SquareParking } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -13,7 +13,7 @@ export default function Footer() {
               className="h-12 w-auto mb-4"
             />
             <p className="text-primary-foreground/90 text-sm leading-relaxed mb-6">
-              Dermoestética con resultados naturales y enfoque en tu bienestar. 
+              Dermoestética con resultados naturales y enfoque en tu bienestar.
               Ciencia, cuidado real y naturalidad en cada tratamiento.
             </p>
             <div className="flex space-x-4">
@@ -31,11 +31,17 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold text-sm mb-6 uppercase tracking-wider">Enlaces</h4>
+            <h4 className="font-semibold text-sm mb-6 uppercase tracking-wider">
+              Enlaces
+            </h4>
             <ul className="space-y-3">
               <li>
                 <button
-                  onClick={() => document.getElementById("tratamientos")?.scrollIntoView({ behavior: "smooth" })}
+                  onClick={() =>
+                    document
+                      .getElementById("tratamientos")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
                   className="text-primary-foreground/90 hover:text-accent transition-colors text-sm"
                 >
                   Tratamientos
@@ -43,7 +49,11 @@ export default function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => document.getElementById("sobre-mi")?.scrollIntoView({ behavior: "smooth" })}
+                  onClick={() =>
+                    document
+                      .getElementById("sobre-mi")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
                   className="text-primary-foreground/90 hover:text-accent transition-colors text-sm"
                 >
                   Sobre Mí
@@ -51,7 +61,11 @@ export default function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" })}
+                  onClick={() =>
+                    document
+                      .getElementById("contacto")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
                   className="text-primary-foreground/90 hover:text-accent transition-colors text-sm"
                 >
                   Contacto
@@ -62,15 +76,28 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-semibold text-sm mb-6 uppercase tracking-wider">Contacto</h4>
+            <h4 className="font-semibold text-sm mb-6 uppercase tracking-wider">
+              Contacto
+            </h4>
             <ul className="space-y-3">
               <li className="flex items-start space-x-3">
                 <MapPin className="h-4 w-4 mt-1 flex-shrink-0" />
                 <span className="text-primary-foreground/90 text-sm">
-                  134-136, Rbla. de Sta. Cruz<br />
+                  134-136, Rbla. de Sta. Cruz
+                  <br />
                   38001 Santa Cruz de Tenerife
                 </span>
               </li>
+              <li className="flex items-start space-x-3">
+                <SquareParking className="h-4 w-4 mt-1 flex-shrink-0" />
+                <span className="text-primary-foreground/90 text-sm">
+                  1h de parking gratuito en el Hotel Mencey
+                </span>
+              </li>
+              {/* <p className="text-lg text-foreground/80 max-w-2xl mx-auto font-light">
+              Estamos aquí para responder tus preguntas y ayudarte a encontrar
+              el tratamiento perfecto
+            </p> */}
               <li className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 flex-shrink-0" />
                 <a
@@ -95,7 +122,8 @@ export default function Footer() {
 
         <div className="border-t border-primary-foreground/20 pt-8 text-center">
           <p className="text-primary-foreground/80 text-xs">
-            © {new Date().getFullYear()} TruCare Dermoestética. Todos los derechos reservados.
+            © {new Date().getFullYear()} TruCare Dermoestética. Todos los
+            derechos reservados.
           </p>
         </div>
       </div>

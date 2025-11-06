@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { CalendarDaysIcon, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { DEFAULT_WHATSAPP_LINK } from "@/const";
 
@@ -15,9 +15,7 @@ export default function Navigation() {
   };
 
   const handleCalendlyClick = () => {
-
     window.open(DEFAULT_WHATSAPP_LINK, "_blank");
-    
     // window.open("https://calendly.com/trucare-carla/30min", "_blank");
   };
 
@@ -69,7 +67,8 @@ export default function Navigation() {
               onClick={handleCalendlyClick}
               className="bg-primary text-primary-foreground hover:bg-primary/90 text-sm font-medium px-6 py-2 rounded-sm"
             >
-              Coge tu Cita
+              Pedir cita
+              <CalendarDaysIcon className="h-4 w-4 flex-shrink-0" />
             </Button>
           </div>
 
@@ -118,7 +117,8 @@ export default function Navigation() {
               onClick={handleCalendlyClick}
               className="w-full bg-primary text-primary-foreground hover:bg-primary/90 text-sm font-medium py-2 rounded-sm"
             >
-              Coge tu Cita
+              Pedir cita
+              <CalendarDaysIcon className="h-4 w-4 flex-shrink-0" />
             </Button>
           </div>
         )}

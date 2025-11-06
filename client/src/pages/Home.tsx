@@ -15,6 +15,7 @@ import {
   ChevronDown,
   ChevronUp,
   ExternalLink,
+  CalendarDaysIcon,
 } from "lucide-react";
 import { DEFAULT_WHATSAPP_LINK } from "@/const";
 
@@ -246,13 +247,13 @@ export default function Home() {
             className="h-20 md:h-28 w-auto mx-auto mb-8 filter brightness-0 invert"
           />
           <h1 className="text-5xl md:text-7xl font-light tracking-tight mb-6 leading-tight">
-            Dermoestética con
-            <br />
-            <span className="font-semibold">Resultados Naturales</span>
+            Enfermería <span className="font-semibold">Dermoestética</span>
+            {/* <br />
+            <span className="font-semibold">Resultados Naturales</span> */}
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto font-light opacity-95">
-            Antiaging avanzado y tratamientos personalizados basados en ciencia,
-            cuidado real y enfoque en tu bienestar
+            Protocolos de estética avanzada para transformar y cuidar tu piel
+            desde el interior
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
@@ -260,7 +261,8 @@ export default function Home() {
               className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-6 rounded-sm font-medium"
               onClick={handleCalendlyClick}
             >
-              Coge tu Cita
+              Pedir cita
+              <CalendarDaysIcon className="h-4 w-4 flex-shrink-0" />
             </Button>
             <Button
               size="lg"
@@ -301,31 +303,32 @@ export default function Home() {
 
               <div className="space-y-6 mb-8">
                 <p className="text-foreground/90 leading-relaxed font-light">
-                  Mi nombre es Carla Trujillo, soy enfermera especializada en
-                  dermoestética y he acompañado a muchas mujeres a mejorar su
-                  piel y a volver a sentirse cómodas con su reflejo. Mi forma de
-                  trabajar se basa en escuchar de verdad, entender cada historia
-                  y adaptar cada plan a las necesidades reales de la persona que
-                  tengo delante.
+                  Soy Carla Trujillo, enfermera dermoestética y estoy aquí para
+                  acompañarte en un proceso de cuidado que va mucho más allá de
+                  la piel. Me apasiona ayudarte a sentirte bien contigo misma, a
+                  reconciliarte con tu reflejo y a vivir tu belleza de una forma
+                  auténtica y tranquila.
                 </p>
 
                 <p className="text-foreground/90 leading-relaxed font-light">
-                  A lo largo de mi experiencia he visto cómo un buen
-                  acompañamiento puede cambiar no solo la piel, sino la manera
-                  en la que te miras y te cuidas. Por eso, en cada proceso pongo
-                  toda mi atención en que te sientas guiada, comprendida y
-                  segura. Me ilusiona ayudarte a conseguir mejoras visibles y
-                  coherentes, con tratamientos pensados para ti y un seguimiento
-                  cercano que te permita avanzar sin sentirte sola.
+                  Trabajo desde un enfoque integrador en el que mezclo ciencia,
+                  estética y mucha pasión por lo que hago. Para mí, cada piel es
+                  única y merece un plan pensado con atención, sensibilidad y
+                  criterio. Creo en los tratamientos seguros, en los resultados
+                  naturales y en la importancia de respetar la armonía de cada
+                  rostro.
                 </p>
 
                 <p className="text-foreground/90 leading-relaxed font-light">
-                  TruCare es, para mí, la forma más honesta de unir lo que sé,
-                  lo que siento y la manera en que quiero cuidar a las personas.
+                  A la vez que te cuido, te acompaño: escucho tu historia,
+                  entiendo tus necesidades y te guío con claridad para que nunca
+                  te sientas sola en el proceso. TruCare es mi manera de unir lo
+                  que sé, lo que creo y lo que siento: un espacio donde la piel
+                  se trata con ciencia, pero también con corazón.
                 </p>
               </div>
 
-              <div className="space-y-6 pt-8 border-t border-border">
+              {/* <div className="space-y-6 pt-8 border-t border-border">
                 <div>
                   <h3 className="text-2xl font-semibold mb-4 text-foreground">
                     La Filosofía de TruCare
@@ -382,7 +385,7 @@ export default function Home() {
                     cercanía.
                   </p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -798,25 +801,33 @@ export default function Home() {
                   <div className="flex items-start space-x-4">
                     <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
                     <div>
-                      <h4 className="font-semibold text-foreground mb-1">
+                      {/* <h4 className="font-semibold text-foreground mb-1">
                         Dirección
-                      </h4>
-                      <p className="text-foreground/80 text-sm font-light">
+                      </h4> */}
+                      <p className="font-semibold text-foreground mb-1">
                         134-136, Rbla. de Sta. Cruz
                         <br />
                         38001 Santa Cruz de Tenerife
+                      </p>
+                      <p
+                        className="text-foreground/80 text-sm font-light"
+                        style={{
+                          display: "flex",
+                        }}
+                      >
+                        1h de parking gratuito en el Hotel Mencey
                       </p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-4">
                     <Phone className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
                     <div>
-                      <h4 className="font-semibold text-foreground mb-1">
+                      {/* <h4 className="font-semibold text-foreground mb-1">
                         Teléfono
-                      </h4>
+                      </h4> */}
                       <a
                         href="tel:+34614518135"
-                        className="text-foreground/80 hover:text-primary text-sm font-light"
+                        className="hover:text-primary font-semibold text-foreground mb-1"
                       >
                         +34 614 518 135
                       </a>
@@ -825,12 +836,12 @@ export default function Home() {
                   <div className="flex items-start space-x-4">
                     <Mail className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
                     <div>
-                      <h4 className="font-semibold text-foreground mb-1">
+                      {/* <h4 className="font-semibold text-foreground mb-1">
                         Email
-                      </h4>
+                      </h4> */}
                       <a
                         href="mailto:trucare.carla@gmail.com"
-                        className="text-foreground/80 hover:text-primary text-sm font-light"
+                        className=" hover:text-primary font-semibold text-foreground mb-1"
                       >
                         trucare.carla@gmail.com
                       </a>
@@ -843,7 +854,8 @@ export default function Home() {
                 onClick={handleCalendlyClick}
                 className="w-full bg-primary text-primary-foreground hover:bg-primary/90 py-6 rounded-sm font-medium text-lg"
               >
-                Coge tu Cita
+                Pedir cita
+                <CalendarDaysIcon className="h-4 w-4 flex-shrink-0" />
               </Button>
             </div>
           </div>
