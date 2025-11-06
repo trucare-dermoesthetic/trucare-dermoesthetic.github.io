@@ -21,10 +21,10 @@ import { DEFAULT_WHATSAPP_LINK } from "@/const";
 
 export default function Home() {
   const [formData, setFormData] = useState({
-    nombre: "",
+    name: "",
     email: "",
-    telefono: "",
-    mensaje: "",
+    phone: "",
+    message: "",
   });
 
   const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null);
@@ -42,7 +42,7 @@ export default function Home() {
     })
       .then(() => {
         toast.success("¡Gracias por tu mensaje! Te contactaremos pronto.");
-        setFormData({ nombre: "", email: "", telefono: "", mensaje: "" });
+        setFormData({ name: "", email: "", phone: "", message: "" });
       })
       .catch(e => {
         console.log("Error fetch", e);
@@ -746,9 +746,9 @@ export default function Home() {
                     </label>
                     <Input
                       id="nombre"
-                      value={formData.nombre}
+                      value={formData.name}
                       onChange={e =>
-                        setFormData({ ...formData, nombre: e.target.value })
+                        setFormData({ ...formData, name: e.target.value })
                       }
                       required
                       placeholder="Tu nombre"
@@ -784,9 +784,9 @@ export default function Home() {
                     <Input
                       id="telefono"
                       type="tel"
-                      value={formData.telefono}
+                      value={formData.phone}
                       onChange={e =>
-                        setFormData({ ...formData, telefono: e.target.value })
+                        setFormData({ ...formData, phone: e.target.value })
                       }
                       required
                       placeholder="+34 614 518 135"
@@ -802,9 +802,9 @@ export default function Home() {
                     </label>
                     <Textarea
                       id="mensaje"
-                      value={formData.mensaje}
+                      value={formData.message}
                       onChange={e =>
-                        setFormData({ ...formData, mensaje: e.target.value })
+                        setFormData({ ...formData, message: e.target.value })
                       }
                       required
                       placeholder="Cuéntanos cómo podemos ayudarte..."
