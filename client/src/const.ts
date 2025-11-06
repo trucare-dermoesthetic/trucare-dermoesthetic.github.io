@@ -7,7 +7,7 @@ export const APP_LOGO =
   "https://placehold.co/128x128/E1E7EF/1F2937?text=App";
 
 
-export const DEFAULT_WHATSAPP_LINK = "https://wa.me/34614518135";
+export const DEFAULT_WHATSAPP_LINK = "https://wa.link/qtz93q";
 
 // Generate login URL at runtime so redirect URI reflects the current origin.
 export const getLoginUrl = () => {

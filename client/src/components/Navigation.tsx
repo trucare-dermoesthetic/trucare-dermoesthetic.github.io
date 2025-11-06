@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { DEFAULT_WHATSAPP_LINK } from "@/const";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,7 +16,7 @@ export default function Navigation() {
 
   const handleCalendlyClick = () => {
 
-    window.open("https://wa.link/qtz93q", "_blank");
+    window.open(DEFAULT_WHATSAPP_LINK, "_blank");
     
     // window.open("https://calendly.com/trucare-carla/30min", "_blank");
   };
