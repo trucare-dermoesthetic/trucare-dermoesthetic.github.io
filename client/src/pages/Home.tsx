@@ -205,7 +205,7 @@ export default function Home() {
       descripcion:
         "Valoración completa, análisis de la piel / cuero cabelludo o afección corporal y plan de tratamiento personalizado sin costo.",
       descuento: "Gratis",
-      buttonfunc: () => {
+      buttonFunc: () => {
         // link valoracion gratuita
         window.open("https://wa.link/jced33", "_blank");
       },
