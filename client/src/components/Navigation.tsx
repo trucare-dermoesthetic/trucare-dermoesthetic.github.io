@@ -14,7 +14,10 @@ export default function Navigation() {
   };
 
   const handleCalendlyClick = () => {
-    window.open("https://calendly.com/trucare-carla/30min", "_blank");
+
+    window.open("https://wa.link/qtz93q", "_blank");
+    
+    // window.open("https://calendly.com/trucare-carla/30min", "_blank");
   };
 
   return (

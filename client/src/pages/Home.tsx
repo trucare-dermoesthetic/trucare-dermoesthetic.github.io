@@ -1,12 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
@@ -22,6 +16,7 @@ import {
   ChevronUp,
   ExternalLink,
 } from "lucide-react";
+import { DEFAULT_WHATSAPP_LINK } from "@/const";
 
 export default function Home() {
   const [formData, setFormData] = useState({
@@ -52,7 +47,8 @@ export default function Home() {
   };
 
   const handleCalendlyClick = () => {
-    window.open("https://calendly.com/trucare-carla/30min", "_blank");
+    window.open(DEFAULT_WHATSAPP_LINK, "_blank");
+    // window.open("https://calendly.com/trucare-carla/30min", "_blank");
   };
 
   const handleNewsletterSubmit = (e: React.FormEvent) => {
@@ -65,37 +61,82 @@ export default function Home() {
   };
 
   const tratamientosFaciales = [
-    { nombre: "Valoración Gratuita", desc: "Análisis completo de tu piel" },
+    { nombre: "Valoración Gratuita", desc: "Primera toma de contacto sin compromiso en la que revisamos tu caso, tu piel, tus hábitos, necesidades y objetivos estéticos. Te orientamos de forma clara y personalizada sobre los tratamientos y cuidados más adecuados para ti" },
     {
       nombre: "Dermoconsulta + Rutina Facial",
-      desc: "Diagnóstico y protocolo personalizado",
+      desc: "Evaluación personalizada de tu piel donde analizamos tus necesidades reales y diseñamos una rutina facial completamente a medida. Incluye un PDF detallado con todos los pasos de tu rutina, recomendaciones específicas, suplementación (si fuera necesaria) y un seguimiento para garantizar los mejores resultados",
     },
-    { nombre: "Peeling Químico", desc: "Renovación celular profunda" },
-    { nombre: "Microneedling", desc: "Estimulación de colágeno natural" },
-    { nombre: "Rellenos con Ácido Hialurónico", desc: "Volumen y definición" },
-    { nombre: "Mesoterapia Facial", desc: "Hidratación y nutrición intensiva" },
-    { nombre: "Skinbooster", desc: "Luminosidad y firmeza" },
-    { nombre: "Inductores de Colágeno", desc: "Bioestimulación profunda" },
-    { nombre: "Exosomas Faciales", desc: "Regeneración celular avanzada" },
-    { nombre: "Hilos Tensores", desc: "Lifting no invasivo" },
-    { nombre: "Plasmapen", desc: "Rejuvenecimiento plasma" },
+    {
+      nombre: "Peeling Químico",
+      desc: "Renovación profunda de la piel que unifica el tono, mejora la textura y aporta luminosidad desde la primera sesión",
+    },
+    {
+      nombre: "Microneedling",
+      desc: "Técnica de regeneración que estimula la producción de colágeno, reduce poros visibles y suaviza marcas o cicatrices",
+    },
+    {
+      nombre: "Rellenos con Ácido Hialurónico",
+      desc: "Aportan volumen, hidratación y definición de forma natural para armonizar el rostro sin perder expresividad",
+    },
+    {
+      nombre: "Mesoterapia Facial",
+      desc: "Microinyecciones de activos específicos que revitalizan, hidratan y mejoran el aspecto de la piel según sus necesidades",
+    },
+    {
+      nombre: "Skinbooster",
+      desc: "Hidratación profunda con ácido hialurónico de larga duración que mejora la calidad cutánea y deja un efecto “glow” saludable",
+    },
+    {
+      nombre: "Inductores de Colágeno",
+      desc: "Estimulan la producción natural de colágeno para recuperar firmeza, densidad y elasticidad",
+    },
+    {
+      nombre: "Exosomas Faciales",
+      desc: "Tratamiento avanzado que potencia la regeneración celular, mejora la textura y aporta un aspecto más rejuvenecido",
+    },
+    {
+      nombre: "Plasmapen",
+      desc: "Eliminación precisa de pequeñas lesiones cutáneas como verrugas planas o fibromas, mejorando la uniformidad de la piel",
+    },
+    {
+      nombre: "Hilos Tensores",
+      desc: "Efecto lifting inmediato que redefine contornos y mejora la flacidez mediante la estimulación de colágeno",
+    },
   ];
 
   const tratamientosCorporales = [
-    { nombre: "Mesoterapia Corporal", desc: "Tratamiento localizado" },
-    { nombre: "Intralipoterapia", desc: "Reducción de grasa localizada" },
-    { nombre: "Presoterapia", desc: "Drenaje y circulación" },
-    { nombre: "Indiba", desc: "Radiofrecuencia corporal" },
+    {
+      nombre: "Mesoterapia Corporal",
+      desc: "Ayuda a reducir celulitis, grasa localizada y flacidez mediante principios activos específicos",
+    },
+    {
+      nombre: "Presoterapia",
+      desc: "Activa la circulación y favorece el drenaje de líquidos y toxinas, aliviando la sensación de pesadez",
+    },
+    {
+      nombre: "Indiba Corporal",
+      desc: "Radiofrecuencia avanzada que regenera y reafirma tejidos, mejorando la calidad y firmeza de la piel",
+    },
+    { nombre: "Intralipoterapia", desc: "Tratamiento diseñado para reducir acúmulos localizados de grasa y mejorar el contorno corporal de forma progresiva. Ideal para zonas donde cuesta más eliminar volumen" },
   ];
 
   const tratamientosCapilares = [
-    { nombre: "Diagnóstico Capilar Gratuito", desc: "Análisis especializado" },
     {
-      nombre: "Tratamientos para Alopecias",
-      desc: "Soluciones personalizadas",
+      nombre: "Diagnóstico Capilar Gratuito",
+      desc: "Valoración inicial con tricoscopio para identificar alteraciones del cuero cabelludo y del folículo",
     },
-    { nombre: "Mesoterapia Capilar", desc: "Nutrición y regeneración" },
-    { nombre: "Exosomas Capilares", desc: "Tecnología regenerativa avanzada" },
+    {
+      nombre: "Abordaje integral de Alopecias",
+      desc: "Diseño de un plan personalizado según el tipo de alopecia para frenar la caída y mejorar la salud capilar",
+    },
+    {
+      nombre: "Mesoterapia Capilar",
+      desc: "Microinyecciones de vitaminas, aminoácidos y principios activos que nutren directamente el folículo piloso, fortalecen el cabello, reducen la caída y mejoran su densidad y calidad",
+    },
+    {
+      nombre: "Exosomas Capilares",
+      desc: "Regeneración avanzada que estimula el folículo y mejora la calidad y crecimiento del cabello",
+    },
   ];
 
   const testimonios = [
@@ -154,22 +195,27 @@ export default function Home() {
 
   const promociones = [
     {
-      titulo: "Primera Consulta Gratuita",
+      titulo: "Valoración gratuita",
       descripcion:
-        "Valoración completa, análisis de piel y plan de tratamiento personalizado sin costo.",
+        "Valoración completa, análisis de la piel / cuero cabelludo o afección corporal y plan de tratamiento personalizado sin costo.",
       descuento: "Gratis",
+      buttonfunc: () => {
+        // link valoracion gratuita
+        window.open("https://wa.link/jced33", "_blank");
+      },
     },
     {
-      titulo: "Pack de 5 Sesiones",
+      titulo: "🎓 Flash Promo – Foro de Empleo ULL (solo hoy, 7 de noviembre)",
       descripcion:
-        "20% de descuento en cualquier tratamiento al contratar 5 o más sesiones.",
-      descuento: "20% OFF",
-    },
-    {
-      titulo: "Tratamiento de Prueba",
-      descripcion:
-        "Primera sesión de cualquier tratamiento con 15% de descuento para nuevos pacientes.",
-      descuento: "15% OFF",
+        "Regístrate en nuestra web y consigue un 20% de descuento en tu primer tratamiento. Promoción disponible para estudiantes, egresados y asistentes al Foro de Empleo de la Universidad de La Laguna. Si te registras hoy, tu descuento quedará activado y podrás canjearlo durante los próximos 3 meses.",
+      descuento: "20% de descuento en tu primer tratamiento",
+      buttonText: "Registrarme",
+      buttonFunc: () => {
+        const element = document.getElementById("newsletter");
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      },
     },
   ];
 
@@ -220,7 +266,7 @@ export default function Home() {
                   ?.scrollIntoView({ behavior: "smooth" })
               }
             >
-              Descubre Tratamientos
+              Nuestros tratamientos
             </Button>
           </div>
         </div>
@@ -248,64 +294,45 @@ export default function Home() {
               </h2>
 
               <div className="space-y-6 mb-8">
-                <p className="text-lg text-foreground/90 leading-relaxed font-light">
-                  Soy enfermera especializada en dermoestética y creadora de
-                  Trucare, un espacio donde combino ciencia, salud y belleza
-                  para lograr resultados reales y naturales.
+                <p className="text-foreground/90 leading-relaxed font-light">
+                  Mi nombre es Carla Trujillo, soy enfermera especializada en
+                  dermoestética y he acompañado a muchas mujeres a mejorar su
+                  piel y a volver a sentirse cómodas con su reflejo. Mi forma de
+                  trabajar se basa en escuchar de verdad, entender cada historia
+                  y adaptar cada plan a las necesidades reales de la persona que
+                  tengo delante.
                 </p>
 
-                <p className="text-lg text-foreground/90 leading-relaxed font-light">
-                  Mi experiencia en el ámbito sanitario me permite trabajar cada
-                  piel desde un enfoque seguro, responsable y basado en la
-                  evidencia, respetando siempre la fisiología y las necesidades
-                  individuales de cada persona.
+                <p className="text-foreground/90 leading-relaxed font-light">
+                  A lo largo de mi experiencia he visto cómo un buen
+                  acompañamiento puede cambiar no solo la piel, sino la manera
+                  en la que te miras y te cuidas. Por eso, en cada proceso pongo
+                  toda mi atención en que te sientas guiada, comprendida y
+                  segura. Me ilusiona ayudarte a conseguir mejoras visibles y
+                  coherentes, con tratamientos pensados para ti y un seguimiento
+                  cercano que te permita avanzar sin sentirte sola.
                 </p>
 
-                <p className="text-lg text-foreground/90 leading-relaxed font-light">
-                  A lo largo de mi carrera he acompañado a pacientes en la
-                  mejora de su salud cutánea, integrando protocolos efectivos
-                  tanto en rutinas domiciliarias como en tratamientos en cabina.
-                  Mi objetivo es que entiendas tu piel, sepas cuidarla y
-                  disfrutes del proceso.
+                <p className="text-foreground/90 leading-relaxed font-light">
+                  TruCare es, para mí, la forma más honesta de unir lo que sé,
+                  lo que siento y la manera en que quiero cuidar a las personas.
                 </p>
               </div>
 
               <div className="space-y-6 pt-8 border-t border-border">
                 <div>
                   <h3 className="text-2xl font-semibold mb-4 text-foreground">
-                    La Filosofía de Trucare
+                    La Filosofía de TruCare
                   </h3>
                   <p className="text-foreground/90 font-light mb-6">
-                    Trucare nace de la idea de crear un concepto de estética
-                    honesta, actual y cercana, donde cada tratamiento se
-                    personaliza al detalle.
+                    En TruCare creemos en un enfoque estético que respeta los
+                    tiempos, la salud de la piel y la esencia de cada persona.
+                    No trabajamos con fórmulas estándar ni con resultados
+                    rápidos que no se sostienen: apostamos por planes
+                    personalizados basados en ciencia, análisis y coherencia.
+                    Nuestra filosofía se centra en tres pilares:
                   </p>
-
                   <div className="space-y-4">
-                    <div className="flex items-start space-x-4">
-                      <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                      <div>
-                        <h4 className="font-semibold text-foreground mb-1">
-                          Ciencia
-                        </h4>
-                        <p className="text-sm text-foreground/80">
-                          Protocolos basados en evidencia y formación como
-                          enfermera dermoestética
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-start space-x-4">
-                      <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                      <div>
-                        <h4 className="font-semibold text-foreground mb-1">
-                          Cuidado Real
-                        </h4>
-                        <p className="text-sm text-foreground/80">
-                          Tratamientos personalizados, seguros y adaptados a tu
-                          estilo de vida
-                        </p>
-                      </div>
-                    </div>
                     <div className="flex items-start space-x-4">
                       <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                       <div>
@@ -313,11 +340,41 @@ export default function Home() {
                           Naturalidad
                         </h4>
                         <p className="text-sm text-foreground/80">
-                          Potenciar tu belleza, no transformarla
+                          Realzar lo mejor de ti con resultados equilibrados y
+                          respetuosos.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-4">
+                      <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-1">
+                          Acompañamiento real
+                        </h4>
+                        <p className="text-sm text-foreground/80">
+                          seguimiento continuo, educación de la piel y
+                          comunicación clara en cada fase del proceso.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-4">
+                      <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-1">
+                          Coherencia y seguridad
+                        </h4>
+                        <p className="text-sm text-foreground/80">
+                          priorizamos tu salud y tu bienestar por encima de
+                          cualquier tendencia del momento.
                         </p>
                       </div>
                     </div>
                   </div>
+                  <p className="text-foreground/90 font-light mt-2">
+                    TruCare no busca transformar quién eres, sino cuidar lo que
+                    ya tienes y potenciarlo con sentido, profesionalidad y
+                    cercanía.
+                  </p>
                 </div>
               </div>
             </div>
@@ -337,7 +394,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {promociones.map((promo, index) => (
               <Card
                 key={index}
@@ -355,10 +412,12 @@ export default function Home() {
                     {promo.descripcion}
                   </p>
                   <Button
-                    onClick={handleCalendlyClick}
+                    onClick={
+                      promo.buttonFunc ? promo.buttonFunc : handleCalendlyClick
+                    }
                     className="w-full bg-primary text-primary-foreground hover:bg-primary/90 rounded-sm font-medium"
                   >
-                    Reservar Ahora
+                    {promo.buttonText || "Reservar Ahora"}
                   </Button>
                 </CardContent>
               </Card>
@@ -510,7 +569,8 @@ export default function Home() {
 
           <div className="text-center">
             <a
-              href="https://www.google.com/search?q=TruCare+Dermoest%C3%A9tica"
+              // href="https://www.google.com/search?q=TruCare+Dermoest%C3%A9tica"
+              href="https://www.google.com/search?sca_esv=eb68ead9e93085bb&sxsrf=AE3TifO1IihwZc6mxibiIyGA1LAjMmuLIw:1762423959777&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E8Eax6ByFScbQuChHPLv2X8aPvm3brfHzR8s5L-6xrZmhfl8kgHDvGxaYv0Vx1qEjcM3KQBJUfIT77zSAXXFjJRfMD7HjNq0N2auyTBhU0WcUHC6ew%3D%3D&q=TruCare+Dermoest%C3%A9tica+Rese%C3%B1as&sa=X&ved=2ahUKEwivtcPwpN2QAxUKSKQEHeWMNPwQ0bkNegQIOhAE&biw=1679&bih=914&dpr=2"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-3 rounded-sm font-medium transition-colors"
@@ -569,7 +629,10 @@ export default function Home() {
       </section>
 
       {/* Newsletter */}
-      <section className="py-24 bg-primary text-primary-foreground">
+      <section
+        id="newsletter"
+        className="py-24 bg-primary text-primary-foreground"
+      >
         <div className="container">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-2">
