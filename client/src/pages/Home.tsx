@@ -39,10 +39,15 @@ export default function Home() {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
-    });
-    toast.success("¡Gracias por tu mensaje! Te contactaremos pronto.");
-
-    setFormData({ nombre: "", email: "", telefono: "", mensaje: "" });
+    })
+      .then(() => {
+        toast.success("¡Gracias por tu mensaje! Te contactaremos pronto.");
+        setFormData({ nombre: "", email: "", telefono: "", mensaje: "" });
+      })
+      .catch(e => {
+        console.log("Error fetch", e);
+        toast.error("Hubo un error. Por favor, inténtalo de nuevo más tarde.");
+      });
   };
 
   const handleCalendlyClick = () => {
@@ -53,9 +58,8 @@ export default function Home() {
   const handleNewsletterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // TODO: enviar email
-
     if (newsletterEmail) {
+      console.log("test");
       await fetch(
         "https://trucare-be.netlify.app/.netlify/functions/registerNewsletter",
         {
@@ -67,11 +71,19 @@ export default function Home() {
             phone: newsletterPhone,
           }),
         }
-      );
-      toast.success("¡Gracias! Te enviaremos nuestras promociones.");
-      setNewsletterName("");
-      setNewsletterEmail("");
-      setNewsletterPhone("");
+      )
+        .then(() => {
+          toast.success("¡Gracias! Te enviaremos nuestras promociones.");
+          setNewsletterName("");
+          setNewsletterEmail("");
+          setNewsletterPhone("");
+        })
+        .catch(e => {
+          console.log("Error fetch", e);
+          toast.error(
+            "Hubo un error. Por favor, inténtalo de nuevo más tarde."
+          );
+        });
     }
   };
 
