@@ -40,7 +40,8 @@ export default function Home() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
     })
-      .then(() => {
+      .then(response => {
+        console.log("response", response.status);
         toast.success("¡Gracias por tu mensaje! Te contactaremos pronto.");
         setFormData({ name: "", email: "", phone: "", message: "" });
       })
@@ -72,7 +73,8 @@ export default function Home() {
           }),
         }
       )
-        .then(() => {
+        .then(response => {
+          console.log("response", response.status);
           toast.success("¡Gracias! Te enviaremos nuestras promociones.");
           setNewsletterName("");
           setNewsletterEmail("");
