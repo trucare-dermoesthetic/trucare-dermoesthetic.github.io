@@ -61,7 +61,10 @@ export default function Home() {
   };
 
   const tratamientosFaciales = [
-    { nombre: "Valoración Gratuita", desc: "Primera toma de contacto sin compromiso en la que revisamos tu caso, tu piel, tus hábitos, necesidades y objetivos estéticos. Te orientamos de forma clara y personalizada sobre los tratamientos y cuidados más adecuados para ti" },
+    {
+      nombre: "Valoración Gratuita",
+      desc: "Primera toma de contacto sin compromiso en la que revisamos tu caso, tu piel, tus hábitos, necesidades y objetivos estéticos. Te orientamos de forma clara y personalizada sobre los tratamientos y cuidados más adecuados para ti",
+    },
     {
       nombre: "Dermoconsulta + Rutina Facial",
       desc: "Evaluación personalizada de tu piel donde analizamos tus necesidades reales y diseñamos una rutina facial completamente a medida. Incluye un PDF detallado con todos los pasos de tu rutina, recomendaciones específicas, suplementación (si fuera necesaria) y un seguimiento para garantizar los mejores resultados",
@@ -117,7 +120,10 @@ export default function Home() {
       nombre: "Indiba Corporal",
       desc: "Radiofrecuencia avanzada que regenera y reafirma tejidos, mejorando la calidad y firmeza de la piel",
     },
-    { nombre: "Intralipoterapia", desc: "Tratamiento diseñado para reducir acúmulos localizados de grasa y mejorar el contorno corporal de forma progresiva. Ideal para zonas donde cuesta más eliminar volumen" },
+    {
+      nombre: "Intralipoterapia",
+      desc: "Tratamiento diseñado para reducir acúmulos localizados de grasa y mejorar el contorno corporal de forma progresiva. Ideal para zonas donde cuesta más eliminar volumen",
+    },
   ];
 
   const tratamientosCapilares = [
@@ -495,10 +501,9 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Tratamientos Capilares */}
           <div>
             <h3 className="text-3xl font-semibold mb-2 text-foreground">
-              Enfermería Estética Avanzada
+              Tratamientos Capilares
             </h3>
             <p className="text-foreground/80 mb-8 font-light">
               Soluciones integrales para la salud capilar y tratamientos
