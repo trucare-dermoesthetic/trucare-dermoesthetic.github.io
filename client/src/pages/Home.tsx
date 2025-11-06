@@ -18,6 +18,7 @@ import {
   CalendarDaysIcon,
 } from "lucide-react";
 import { DEFAULT_WHATSAPP_LINK } from "@/const";
+import { Checkbox } from "@/components/ui/checkbox";
 
 export default function Home() {
   const [formData, setFormData] = useState({
@@ -701,6 +702,17 @@ export default function Home() {
                   className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/60 rounded-sm"
                 />
               </div>
+              <div className="text-left">
+                <Checkbox required className="mr-1" />
+                <span className="text-xs text-primary-foreground/80 font-light">
+                  Acepto la{" "}
+                  <a href="/files/privacity_trucare.pdf" download>
+                    Política de Privacidad
+                  </a>{" "}
+                  y deseo recibir comunicaciones comerciales de Trucare.
+                </span>
+              </div>
+
               <Button
                 type="submit"
                 className="w-full bg-accent text-accent-foreground hover:bg-accent/90 rounded-sm font-medium py-6"
@@ -813,6 +825,20 @@ export default function Home() {
                       className="rounded-sm"
                     />
                   </div>
+                  <div className="text-left">
+                    <Checkbox required className="mr-1" />
+                    <span className="text-xs text-foreground/80 font-light">
+                      He leído y acepto la{" "}
+                      <a href="/files/privacity_trucare.pdf" download>
+                        Política de Privacidad
+                      </a>{" "}
+                      y el tratamiento de mis datos para resolver mi consulta.
+                    </span>
+                  </div>
+
+                  {/* <Checkbox required>
+                    Sí, quiero recibir novedades y ofertas de Trucare{" "}
+                  </Checkbox> */}
                   <Button
                     type="submit"
                     className="w-full bg-primary text-primary-foreground hover:bg-primary/90 rounded-sm font-medium"
