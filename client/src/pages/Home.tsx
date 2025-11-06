@@ -28,22 +28,20 @@ export default function Home() {
   });
 
   const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null);
+  const [newsletterName, setNewsletterName] = useState("");
   const [newsletterEmail, setNewsletterEmail] = useState("");
   const [newsletterPhone, setNewsletterPhone] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("¡Gracias por tu mensaje! Te contactaremos pronto.");
 
-    await fetch("https://trucare-be.netlify.app/.netlify/functions/sendEmail", {
+    await fetch("https://trucare-be.netlify.app/.netlify/functions/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        to: formData.email,
-        subject: "Welcome!",
-        text: "Hola desde TruCare 🎉",
-      }),
+      body: JSON.stringify(formData),
     });
+    toast.success("¡Gracias por tu mensaje! Te contactaremos pronto.");
+
     setFormData({ nombre: "", email: "", telefono: "", mensaje: "" });
   };
 
@@ -52,10 +50,26 @@ export default function Home() {
     // window.open("https://calendly.com/trucare-carla/30min", "_blank");
   };
 
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (newsletterEmail || newsletterPhone) {
+
+    // TODO: enviar email
+
+    if (newsletterEmail) {
+      await fetch(
+        "https://trucare-be.netlify.app/.netlify/functions/registerNewsletter",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: newsletterName,
+            email: newsletterEmail,
+            phone: newsletterPhone,
+          }),
+        }
+      );
       toast.success("¡Gracias! Te enviaremos nuestras promociones.");
+      setNewsletterName("");
       setNewsletterEmail("");
       setNewsletterPhone("");
     }
@@ -148,21 +162,22 @@ export default function Home() {
 
   const testimonios = [
     {
-      nombre: "María García",
+      nombre: "Yanira Duque",
       rating: 5,
       texto:
-        "Resultados increíbles. Carla es muy profesional y atenta a los detalles.",
+        "Me hice un tratamiento con Carla hace 2 semanas y noto la piel mucho más hidratada y con más brillo. Explica todo con mucha claridad y te asesora para saber qué tratamiento es el más adecuado. Además, me recomendó productos para mi rutina diaria que me están encantando. En las mejores manos. 100% recomendable. Volveré pronto 👏🏻👏🏻👏🏻👏🏻",
     },
     {
-      nombre: "Laura Martínez",
+      nombre: "Sara González",
       rating: 5,
       texto:
-        "El mejor tratamiento facial que he recibido. Se nota la diferencia.",
+        "Carla es maravillosa, su buen trato y cercanía van a la par que su gran profesionalidad. Asesora con sinceridad, ofreciendo alternativas y soluciones ante cualquier demanda, lo que demuestra su gran preparación y formación. Desde que fui la primera vez a su consulta, no dudé en continuar y confiarle mis cuidados, así que, evidentemente, la recomendaría 100%.",
     },
     {
-      nombre: "Sofía López",
+      nombre: "Pilar Mendez",
       rating: 5,
-      texto: "Muy recomendable. Ambiente acogedor y resultados naturales.",
+      texto:
+        "Excelente profesional, muy atenta con sus pacientes. Explica con detalle el procedimiento a realizar. Volveré seguro porque además es un encanto de persona.",
     },
   ];
 
@@ -248,12 +263,11 @@ export default function Home() {
           />
           <h1 className="text-5xl md:text-7xl font-light tracking-tight mb-6 leading-tight">
             Enfermería <span className="font-semibold">Dermoestética</span>
-            {/* <br />
-            <span className="font-semibold">Resultados Naturales</span> */}
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto font-light opacity-95">
-            Protocolos de estética avanzada para transformar y cuidar tu piel
-            desde el interior
+            Estética avanzada para transformar y cuidar tu piel desde el
+            interior, con resultados que se sienten por dentro y se notan por
+            fuera.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
@@ -650,10 +664,18 @@ export default function Home() {
               Suscríbete para estar al tanto de nuestras ofertas exclusivas
             </p>
             <form onSubmit={handleNewsletterSubmit} className="space-y-4">
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid md:grid-cols-3 gap-3">
+                <Input
+                  type="text"
+                  value={newsletterName}
+                  onChange={e => setNewsletterName(e.target.value)}
+                  placeholder="Tu nombre"
+                  className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/60 rounded-sm"
+                />
                 <Input
                   type="email"
                   value={newsletterEmail}
+                  required
                   onChange={e => setNewsletterEmail(e.target.value)}
                   placeholder="tu@email.com"
                   className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/60 rounded-sm"

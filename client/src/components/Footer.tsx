@@ -13,8 +13,8 @@ export default function Footer() {
               className="h-12 w-auto mb-4"
             />
             <p className="text-primary-foreground/90 text-sm leading-relaxed mb-6">
-              Dermoestética con resultados naturales y enfoque en tu bienestar.
-              Ciencia, cuidado real y naturalidad en cada tratamiento.
+              Dermoestética avanzada para resultados naturales y un bienestar
+              real.
             </p>
             <div className="flex space-x-4">
               <a
