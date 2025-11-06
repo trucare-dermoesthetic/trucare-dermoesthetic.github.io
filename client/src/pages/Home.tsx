@@ -60,7 +60,6 @@ export default function Home() {
     e.preventDefault();
 
     if (newsletterEmail) {
-      console.log("test");
       await fetch(
         "https://trucare-be.netlify.app/.netlify/functions/registerNewsletter",
         {
