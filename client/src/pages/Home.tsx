@@ -245,12 +245,9 @@ export default function Home() {
       descripcion:
         "¡Tu rostro listo para brillar en estas fiestas! El tratamiento ideal para las fiestas. Combina Peeling químico (renovación y textura) y Mesoterapia facial con vitaminas (luminosidad e hidratación profunda). Consigue una piel fresca, uniforme y con efecto flash, lista para lucir tu mejor maquillaje.",
       descuento: "Antes: 185€, Ahora : 145€",
-      buttonText: "Registrarme",
+      buttonText: "Solicita tu cita aquí",
       buttonFunc: () => {
-        const element = document.getElementById("newsletter");
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
-        }
+        window.open("https://wa.link/jced33", "_blank");
       },
     },
   ];
