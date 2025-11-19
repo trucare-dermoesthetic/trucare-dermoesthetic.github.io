@@ -241,10 +241,10 @@ export default function Home() {
       },
     },
     {
-      titulo: "🎓 Flash Promo – Foro de Empleo ULL (solo hoy, 7 de noviembre)",
+      titulo: "✨ Pack Glow : peeling químico + mesoterapia con vitaminas",
       descripcion:
-        "Regístrate en nuestra web y consigue un 20% de descuento en tu primer tratamiento. Promoción disponible para estudiantes, egresados y asistentes al Foro de Empleo de la Universidad de La Laguna. Si te registras hoy, tu descuento quedará activado y podrás canjearlo durante los próximos 3 meses.",
-      descuento: "20% de descuento en tu primer tratamiento",
+        "¡Tu rostro listo para brillar en estas fiestas! El tratamiento ideal para las fiestas. Combina Peeling químico (renovación y textura) y Mesoterapia facial con vitaminas (luminosidad e hidratación profunda). Consigue una piel fresca, uniforme y con efecto flash, lista para lucir tu mejor maquillaje.",
+      descuento: "Antes: 185€, Ahora : 145€",
       buttonText: "Registrarme",
       buttonFunc: () => {
         const element = document.getElementById("newsletter");
@@ -254,6 +254,7 @@ export default function Home() {
       },
     },
   ];
+  
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
