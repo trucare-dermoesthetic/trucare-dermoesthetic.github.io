@@ -197,35 +197,47 @@ export default function Home() {
 
   const faqs = [
     {
+      pregunta: "¿Cómo sé qué tratamiento es el mejor para mí?",
+      respuesta:
+        "En TruCare, tu camino siempre comienza con una valoración dermoestética integral. Analizo tu tipo de piel, historial y tus objetivos específicos para diseñar tu 'TruPlan' personalizado. Lo más importante: esta primera consulta de valoración es totalmente gratuita y sin ningún compromiso. Mi objetivo es asesorarte con la máxima transparencia.",
+    },
+    {
       pregunta:
-        "¿Cuál es el tiempo de recuperación después de los tratamientos?",
+        "¿Por qué es necesaria la Valoración Inicial si ya sé lo que quiero?",
       respuesta:
-        "El tiempo de recuperación varía según el tratamiento. Los tratamientos no invasivos como la mesoterapia tienen recuperación inmediata. Los peelings químicos pueden dejar la piel sensible 3-5 días. El microneedling requiere 24-48 horas de cuidados especiales. Te asesoraré sobre los cuidados específicos después de tu tratamiento.",
+        `Aunque sepas lo que quieres, la valoración inicial me permite garantizar tu seguridad y la eficacia del tratamiento. Necesito evaluar tu piel, confirmar que el procedimiento es adecuado para ti y asegurarme de que no existen contraindicaciones, optimizando así el resultado final. 
+        Si estás conforme con el tratamiento recomendado y quieres realizarlo ese mismo día, lo más probable es que podamos hacerlo, siempre y cuando el tiempo de la cita lo permita.`,
     },
     {
-      pregunta: "¿Cuántas sesiones necesito para ver resultados?",
+      pregunta: "¿Los tratamientos son dolorosos y cuánto duran?",
       respuesta:
-        "Los resultados dependen del tratamiento y tu tipo de piel. Algunos tratamientos como el peeling químico muestran resultados inmediatos. Otros como el microneedling o la mesoterapia requieren 3-6 sesiones para resultados óptimos. En tu consulta gratuita evaluaré tu caso específico.",
+        "La mayoría de mis tratamientos son bien tolerados. Utilizo tecnología avanzada y técnicas para minimizar cualquier molestia. La duración de las sesiones varía, pero una sesión típica suele ser de 30 a 60 minutos. Te lo especificaré con detalle durante tu valoración inicial.",
     },
     {
-      pregunta: "¿Es seguro para todos los tipos de piel?",
+      pregunta: "¿Cuánto tiempo se tarda en ver resultados?",
       respuesta:
-        "Sí, todos nuestros tratamientos están diseñados para ser seguros. Como enfermera dermoestética, realizo un diagnóstico completo de tu piel para personalizar cada protocolo. Algunos tratamientos pueden adaptarse según tu tipo de piel, tono y sensibilidad.",
+        `Depende mucho del tipo de tratamiento: 
+
+        • Resultados Inmediatos: En procedimientos como los rellenos con ácido hialurónico, el cambio es visible al momento. No obstante, el resultado final se aprecia mejor a partir de los 7 días, una vez que la inflamación desaparece y el producto se ha asentado. Tendremos una revisión a los 15 días para evaluar el resultado y realizar pequeñas correcciones si fuera necesario.
+        • Resultados Progresivos: Otros tratamientos, como los peelings, microneedling, indiba…requieren de varias sesiones para ser efectivos.
+
+        Te informaré de los tiempos de espera y la frecuencia de las sesiones durante la valoración. Por eso, la constancia y el seguimiento son clave para garantizar el éxito.`,
     },
     {
-      pregunta: "¿Cuál es la diferencia entre los tratamientos faciales?",
+      pregunta:
+        "¿Tienen algún efecto secundario o necesito tiempo de recuperación?",
       respuesta:
-        "Cada tratamiento tiene un objetivo específico. El peeling químico renueva la piel, el microneedling estimula colágeno, los rellenos añaden volumen, la mesoterapia hidrata profundamente. En tu consulta te recomendaré el más adecuado para tus necesidades.",
+        "Todo depende del tipo de procedimiento y de cada persona. Entre los efectos secundarios más habituales y temporales se encuentran el enrojecimiento, la inflamación leve o la posible aparición de pequeños hematomas. En tu valoración te especificaré los efectos esperados para tu tratamiento, el protocolo de cuidados post-sesión y el tiempo de recuperación que podrías necesitar.",
     },
     {
-      pregunta: "¿Hay contraindicaciones para algún tratamiento?",
+      pregunta: "¿Cómo puedo solicitar o reservar una cita?",
       respuesta:
-        "Algunos tratamientos no son recomendables durante el embarazo, con ciertas medicaciones o condiciones de piel activa. Por eso es importante tu consulta inicial donde evaluamos tu historial médico completo.",
+        "Reservar tu cita es muy sencillo. Puedes contactarme enviando un WhatsApp al 614 518 135 o utilizando el formulario de contacto que encontrarás justo debajo en la web. Te responderé lo antes posible para confirmar tu día y hora.",
     },
     {
-      pregunta: "¿Cuál es el precio de los tratamientos?",
+      pregunta: "¿Cómo sé cuáles son los cuidados posteriores al tratamiento?",
       respuesta:
-        "Los precios varían según el tratamiento y la zona a tratar. Ofrecemos paquetes con descuento para múltiples sesiones. Consulta nuestras promociones activas o contacta para un presupuesto personalizado.",
+        "En el momento de la consulta, te explicaré detalladamente los cuidados post-tratamiento y podrás preguntarme cualquier duda. Además, para que puedas leerlo con calma en casa, te enviaré un PDF que contiene todas las indicaciones pre y post-tratamiento a seguir.",
     },
   ];
 
@@ -251,7 +263,6 @@ export default function Home() {
       },
     },
   ];
-  
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -651,7 +662,7 @@ export default function Home() {
                 </button>
                 {expandedFAQ === index && (
                   <div className="px-6 pb-6 border-t border-border">
-                    <p className="text-foreground/80 font-light leading-relaxed">
+                    <p className="text-foreground/80 font-light leading-relaxed" style={{ whiteSpace: 'pre-line' }}>
                       {faq.respuesta}
                     </p>
                   </div>
